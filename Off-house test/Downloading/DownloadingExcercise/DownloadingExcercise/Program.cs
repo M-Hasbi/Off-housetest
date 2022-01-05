@@ -8,10 +8,10 @@ namespace DownloadingExercise
     {
         static readonly WebClient Client = new WebClient();
 
-     
-         static void Main(string[] args)
+
+        static void Main(string[] args)
         {
-            
+
 
             Console.WriteLine("This is the downloading excercise program.");
 
@@ -50,7 +50,7 @@ namespace DownloadingExercise
             DownloadExample2();
             Console.WriteLine("Example number 2 finished!");
 
-            
+
 
         }
 
@@ -58,20 +58,19 @@ namespace DownloadingExercise
         {
             // your example 1 implementation should go here
             Methods methods = new Methods();
-
             Constructions constructions = new Constructions();
 
-            string subPath = constructions.SubPath;
             string fileType = constructions.FileTypeData;
 
-            var uri = ConfigurationSettings.AppSettings["url"];
+            var myUrl = ConfigurationSettings.AppSettings["url"];
 
+            string subPath = constructions.SubPath;
             methods.CreateIfMissing(subPath);
 
-            Client.DownloadFile(uri, subPath + fileType);
+            Client.DownloadFile(myUrl, subPath + fileType);
 
         }
-        
+
         private static void DownloadExample2()
         {
             // your example 2 implementation should go here
@@ -90,9 +89,9 @@ namespace DownloadingExercise
             //webElement1.Click();
 
             methods.CreateIfMissing(subPath);
-            var uri = ConfigurationSettings.AppSettings["url1"];
+            var myUrl = ConfigurationSettings.AppSettings["url1"];
 
-            Client.DownloadFile(uri , subPath + fileType);
+            Client.DownloadFile(myUrl, subPath + fileType);
 
 
 
