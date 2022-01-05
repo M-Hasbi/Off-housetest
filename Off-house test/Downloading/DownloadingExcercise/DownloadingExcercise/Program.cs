@@ -1,5 +1,4 @@
 using System;
-using System.Configuration;
 using System.Net;
 
 
@@ -10,8 +9,7 @@ namespace DownloadingExercise
     class Program
     {
         static readonly WebClient Client = new WebClient();
-        //const string subPath = @"c:\temp\";
-        //const string fileType = "data.xls";
+        
 
 
 
@@ -60,18 +58,7 @@ namespace DownloadingExercise
         private static void DownloadExample1()
         {
             // your example 1 implementation should go here
-            Methods methods = new Methods();
-
-            Constructions constructions = new Constructions();
-
-            string subPath = constructions.SubPath;
-            string fileType = constructions.FileType;
-
-            var uri = ConfigurationSettings.AppSettings["url"];
-
-            methods.CreateIfMissing(subPath);
-
-            Client.DownloadFile(uri, subPath + fileType);
+           
 
         }
 
