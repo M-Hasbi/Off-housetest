@@ -10,8 +10,7 @@ namespace DownloadingExercise
     class Program
     {
         static readonly WebClient Client = new WebClient();
-        //const string subPath = @"c:\temp\";
-        //const string fileType = "data.xls";
+
 
 
 
@@ -37,7 +36,7 @@ namespace DownloadingExercise
             */
 
             Console.WriteLine("Example number 1 started.");
-            DownloadExample1();
+            // DownloadExample1();
             Console.WriteLine("Example number 1 finished!");
 
             /* Example 2:
@@ -54,6 +53,8 @@ namespace DownloadingExercise
             Console.WriteLine("Example number 2 started.");
             DownloadExample2();
             Console.WriteLine("Example number 2 finished!");
+
+            Console.ReadKey();
 
         }
 
@@ -78,7 +79,7 @@ namespace DownloadingExercise
         private static void DownloadExample2()
         {
             // your example 2 implementation should go here
-
+      
         }
     }
 }
