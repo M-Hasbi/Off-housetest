@@ -2,20 +2,16 @@ using System;
 using System.Configuration;
 using System.Net;
 
-
-
-
 namespace DownloadingExercise
 {
     class Program
     {
         static readonly WebClient Client = new WebClient();
 
-
-
-
-        static void Main(string[] args)
+     
+         static void Main(string[] args)
         {
+            
 
             Console.WriteLine("This is the downloading excercise program.");
 
@@ -36,7 +32,7 @@ namespace DownloadingExercise
             */
 
             Console.WriteLine("Example number 1 started.");
-            // DownloadExample1();
+            DownloadExample1();
             Console.WriteLine("Example number 1 finished!");
 
             /* Example 2:
@@ -54,7 +50,7 @@ namespace DownloadingExercise
             DownloadExample2();
             Console.WriteLine("Example number 2 finished!");
 
-            Console.ReadKey();
+            
 
         }
 
@@ -66,7 +62,7 @@ namespace DownloadingExercise
             Constructions constructions = new Constructions();
 
             string subPath = constructions.SubPath;
-            string fileType = constructions.FileType;
+            string fileType = constructions.FileTypeData;
 
             var uri = ConfigurationSettings.AppSettings["url"];
 
@@ -75,11 +71,31 @@ namespace DownloadingExercise
             Client.DownloadFile(uri, subPath + fileType);
 
         }
-
+        
         private static void DownloadExample2()
         {
             // your example 2 implementation should go here
-      
+
+            Methods methods = new Methods();
+            Constructions constructions = new Constructions();
+
+            string subPath = constructions.SubPath;
+            string fileType = constructions.FileTypeByPopulation;
+
+            //var driver = new ChromeDriver();
+            //driver.Navigate().GoToUrl("https://stat.gov.pl/podstawowe-dane/");
+            //IWebElement webElement = driver.FindElement(By.XPath("//*[@id=\"grid\"]/li[1]/figure/h2/a/span/strong"));
+            //webElement.Click();
+            //IWebElement webElement1 = driver.FindElement(By.XPath("//*[@id=\"article-text\"]/div[2]/div[1]/div[3]/div[2]"));
+            //webElement1.Click();
+
+            methods.CreateIfMissing(subPath);
+            var uri = ConfigurationSettings.AppSettings["url1"];
+
+            Client.DownloadFile(uri , subPath + fileType);
+
+
+
         }
     }
 }

@@ -5,8 +5,11 @@
         private const string subPath = @"c:\temp\";
         public string SubPath { get { return subPath; } }
 
-        private const string fileType = "data.xls";
-        public string FileType { get { return fileType; } }
+        private const string fileTypeData = "data.xls";
+        public string FileTypeData { get { return fileTypeData; } }
+
+        private const string fileTypeByPopulation = "population_202101.xls";
+        public string FileTypeByPopulation { get { return fileTypeByPopulation; } }
 
     }
 }
