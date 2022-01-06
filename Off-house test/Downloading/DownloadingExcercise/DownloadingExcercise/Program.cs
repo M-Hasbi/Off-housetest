@@ -48,14 +48,11 @@ namespace DownloadingExercise
         private static void DownloadExample1()
         {
             // your example 1 implementation should go here
-
-
         }
 
         private static void DownloadExample2()
         {
             // your example 2 implementation should go here
-
         }
     }
 }
