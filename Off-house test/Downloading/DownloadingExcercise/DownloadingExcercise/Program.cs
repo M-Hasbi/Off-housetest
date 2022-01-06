@@ -1,3 +1,6 @@
+using DownloadingExercise.Interfaces;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using System.Configuration;
 using System.Net;
@@ -8,15 +11,9 @@ namespace DownloadingExercise
     {
         static readonly WebClient Client = new WebClient();
 
-        private Methods methods;
-        private Constructions constructions;
 
-        public Program()
-        {
-            this.methods = new Methods();
-            this.constructions = new Constructions();
-        }
-        public void Main(string[] args)
+
+        public static void Main(string[] args)
         {
 
 
@@ -39,7 +36,7 @@ namespace DownloadingExercise
             */
 
             Console.WriteLine("Example number 1 started.");
-            DownloadExample1();
+            // DownloadExample1();
             Console.WriteLine("Example number 1 finished!");
 
             /* Example 2:
@@ -61,9 +58,12 @@ namespace DownloadingExercise
 
         }
 
-        private void DownloadExample1()
+        private static void DownloadExample1()
         {
             // your example 1 implementation should go here
+
+            Methods methods = new Methods();
+            Constructions constructions = new Constructions();
 
             string fileType = constructions.FileTypeData;
 
@@ -76,26 +76,33 @@ namespace DownloadingExercise
 
         }
 
-        private void DownloadExample2()
+        private static void DownloadExample2()
         {
             // your example 2 implementation should go here
+            //Methods methods = new Methods();
+            //Constructions constructions = new Constructions();
 
-            string subPath = constructions.SubPath;
-            string fileType = constructions.FileTypeByPopulation;
+            //string subPath = constructions.SubPath;
+            //string fileType = constructions.FileTypeByPopulation;
 
-            //var driver = new ChromeDriver();
-            //driver.Navigate().GoToUrl("https://stat.gov.pl/podstawowe-dane/");
-            //IWebElement webElement = driver.FindElement(By.XPath("//*[@id=\"grid\"]/li[1]/figure/h2/a/span/strong"));
-            //webElement.Click();
-            //IWebElement webElement1 = driver.FindElement(By.XPath("//*[@id=\"article-text\"]/div[2]/div[1]/div[3]/div[2]"));
-            //webElement1.Click();
+            //methods.CreateIfMissing(subPath);
+            //var myUrl = ConfigurationSettings.AppSettings["url1"];
+
+            //Client.DownloadFile(myUrl, subPath + fileType);
+
+
+            //(@"C:\my\path\to\chromedriver\directory");
+            var driver = new ChromeDriver();
+            driver.Navigate().GoToUrl("https://stat.gov.pl/podstawowe-dane/");
+            IWebElement webElement = driver.FindElement(By.XPath("//*[@id=\"grid\"]/li[1]/figure/h2/a/span/strong"));
+            webElement.Click();
+            IWebElement webElement1 = driver.FindElement(By.XPath("//*[@id=\"article-text\"]/div[2]/div[1]/div[3]/div[2]"));
+            webElement1.Click();
+            driver.Close();
 
             //FILE DOWNLOADED INTO DOWNLOAD, GET IT FROM THERE.
 
-            methods.CreateIfMissing(subPath);
-            var myUrl = ConfigurationSettings.AppSettings["url1"];
 
-            Client.DownloadFile(myUrl, subPath + fileType);
 
 
 

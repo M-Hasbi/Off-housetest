@@ -1,8 +1,9 @@
-﻿using System.IO;
+﻿using DownloadingExercise.Interfaces;
+using System.IO;
 
 namespace DownloadingExercise
 {
-    public class Methods
+    public class Methods : IMethods
     {
         public void CreateIfMissing(string subPath)
         {

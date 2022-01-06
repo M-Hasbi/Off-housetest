@@ -1,6 +1,8 @@
-﻿namespace DownloadingExercise
+﻿using DownloadingExercise.Interfaces;
+
+namespace DownloadingExercise
 {
-    public class Constructions
+    public class Constructions 
     {
         private const string subPath = @"c:\temp\";
         public string SubPath { get { return subPath; } }
