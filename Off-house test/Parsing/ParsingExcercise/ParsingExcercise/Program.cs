@@ -55,6 +55,11 @@ namespace ParsingExercise
         private static void ParsingExercise1()
         {
             // your example 1 implementation should go here
+
+            
+            
+                
+            
         }
 
         private static void ParsingExercise2()
