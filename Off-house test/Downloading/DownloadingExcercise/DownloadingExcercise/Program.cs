@@ -1,5 +1,6 @@
 using System;
 using System.Configuration;
+using System.IO;
 using System.Net;
 
 namespace DownloadingExercise
@@ -53,18 +54,19 @@ namespace DownloadingExercise
 
         }
 
+
         private static void DownloadExample1()
         {
             // your example 1 implementation should go here
 
             Methods methods = new Methods();
-            Constructions constructions = new Constructions();
+            // Constants consts = new Constants();
 
-            string fileType = constructions.fileTypeData;
+            string fileType = Constants.fileTypeData;
 
             var myUrl = ConfigurationSettings.AppSettings["urlForDownloadingExercise1"];
 
-            string subPath = constructions.subPath;
+            string subPath = Constants.subPath;
             methods.CreateIfMissing(subPath);// WRITE TEST METHOD
 
             Client.DownloadFile(myUrl, subPath + fileType);// WRITE TEST METHOD
@@ -76,8 +78,12 @@ namespace DownloadingExercise
         {
             Methods methods = new Methods();
 
-            methods.BringAddUserProfilePreference();
+
+
+
+            methods.CreateIfMissing(Constants.subPath);
             methods.WebDriverNavigation();
+            methods.BringAddUserProfilePreference();
             methods.DownloadTheFile();
 
 
