@@ -1,6 +1,3 @@
-using DownloadingExercise.Interfaces;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using System;
 using System.Configuration;
 using System.Net;
@@ -10,8 +7,6 @@ namespace DownloadingExercise
     class Program
     {
         static readonly WebClient Client = new WebClient();
-
-
 
         public static void Main(string[] args)
         {
@@ -65,44 +60,25 @@ namespace DownloadingExercise
             Methods methods = new Methods();
             Constructions constructions = new Constructions();
 
-            string fileType = constructions.FileTypeData;
+            string fileType = constructions.fileTypeData;
 
-            var myUrl = ConfigurationSettings.AppSettings["url"];
+            var myUrl = ConfigurationSettings.AppSettings["urlForDownloadingExercise1"];
 
-            string subPath = constructions.SubPath;
+            string subPath = constructions.subPath;
             methods.CreateIfMissing(subPath);// WRITE TEST METHOD
 
             Client.DownloadFile(myUrl, subPath + fileType);// WRITE TEST METHOD
 
         }
 
+
         private static void DownloadExample2()
         {
-            // your example 2 implementation should go here
-            //Methods methods = new Methods();
-            //Constructions constructions = new Constructions();
+            Methods methods = new Methods();
 
-            //string subPath = constructions.SubPath;
-            //string fileType = constructions.FileTypeByPopulation;
-
-            //methods.CreateIfMissing(subPath);
-            //var myUrl = ConfigurationSettings.AppSettings["url1"];
-
-            //Client.DownloadFile(myUrl, subPath + fileType);
-
-
-            //(@"C:\my\path\to\chromedriver\directory");
-            var driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("https://stat.gov.pl/podstawowe-dane/");
-            IWebElement webElement = driver.FindElement(By.XPath("//*[@id=\"grid\"]/li[1]/figure/h2/a/span/strong"));
-            webElement.Click();
-            IWebElement webElement1 = driver.FindElement(By.XPath("//*[@id=\"article-text\"]/div[2]/div[1]/div[3]/div[2]"));
-            webElement1.Click();
-            driver.Close();
-
-            //FILE DOWNLOADED INTO DOWNLOAD, GET IT FROM THERE.
-
-
+            methods.BringAddUserProfilePreference();
+            methods.WebDriverNavigation();
+            methods.DownloadTheFile();
 
 
 
