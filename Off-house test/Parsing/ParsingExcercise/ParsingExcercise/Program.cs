@@ -4,6 +4,7 @@ namespace ParsingExercise
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             Console.WriteLine("This is the parsing excercise program.");
@@ -45,12 +46,15 @@ namespace ParsingExercise
             ParsingExercise2();
             Console.WriteLine("Example number 2 finished!");
 
-            
+
         }
 
         private static void ParsingExercise1()
         {
             // your example 1 implementation should go here
+            Methods.Methods Methods = new Methods.Methods();
+
+            Methods.GetCountsAndRows();
         }
 
         private static void ParsingExercise2()
