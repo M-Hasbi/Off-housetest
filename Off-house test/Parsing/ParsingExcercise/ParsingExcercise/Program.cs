@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,7 @@ namespace ParsingExercise
             Console.WriteLine("Example number 1 started.");
             ParsingExercise1();
             Console.WriteLine("Example number 1 finished!");
+            Console.ReadKey();
 
             /* Example 2:
             1. There is an excel file attached to the project - data2.xls
@@ -55,6 +57,23 @@ namespace ParsingExercise
         private static void ParsingExercise1()
         {
             // your example 1 implementation should go here
+
+            
+            
+                //Application xlApp = new Application();
+                //Workbook xlWb = xlApp.Workbooks.Open(@"C:\Users\CEM\source\Off-house test - Copy\Off-house test\Parsing\ParsingExcercise\ParsingExcercise\SourceFiles\data1.csv");
+                //_Worksheet xlws = xlWb.Sheets[1];
+                //Range r = xlws.UsedRange;
+
+                //int rows = r.Rows.Count;
+                //int cols = r.Columns.Count;
+                   
+                //Console.WriteLine("Cell A1: {0}", xlws.Cells[1, 1].Value2);
+                //Console.WriteLine("Cell C1: {0}", xlws.Cells[1, 3].Value2);
+                //Console.WriteLine("Cell B4: {0}", xlws.Cells[4, 2].Value2);
+
+                //Console.ReadLine();
+            
         }
 
         private static void ParsingExercise2()

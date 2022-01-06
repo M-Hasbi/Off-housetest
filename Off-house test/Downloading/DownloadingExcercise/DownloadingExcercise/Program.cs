@@ -8,8 +8,15 @@ namespace DownloadingExercise
     {
         static readonly WebClient Client = new WebClient();
 
+        private Methods methods;
+        private Constructions constructions;
 
-        static void Main(string[] args)
+        public Program()
+        {
+            this.methods = new Methods();
+            this.constructions = new Constructions();
+        }
+        public void Main(string[] args)
         {
 
 
@@ -54,29 +61,24 @@ namespace DownloadingExercise
 
         }
 
-        private static void DownloadExample1()
+        private void DownloadExample1()
         {
             // your example 1 implementation should go here
-            Methods methods = new Methods();
-            Constructions constructions = new Constructions();
 
             string fileType = constructions.FileTypeData;
 
             var myUrl = ConfigurationSettings.AppSettings["url"];
 
             string subPath = constructions.SubPath;
-            methods.CreateIfMissing(subPath);
+            methods.CreateIfMissing(subPath);// WRITE TEST METHOD
 
-            Client.DownloadFile(myUrl, subPath + fileType);
+            Client.DownloadFile(myUrl, subPath + fileType);// WRITE TEST METHOD
 
         }
 
-        private static void DownloadExample2()
+        private void DownloadExample2()
         {
             // your example 2 implementation should go here
-
-            Methods methods = new Methods();
-            Constructions constructions = new Constructions();
 
             string subPath = constructions.SubPath;
             string fileType = constructions.FileTypeByPopulation;
@@ -87,6 +89,8 @@ namespace DownloadingExercise
             //webElement.Click();
             //IWebElement webElement1 = driver.FindElement(By.XPath("//*[@id=\"article-text\"]/div[2]/div[1]/div[3]/div[2]"));
             //webElement1.Click();
+
+            //FILE DOWNLOADED INTO DOWNLOAD, GET IT FROM THERE.
 
             methods.CreateIfMissing(subPath);
             var myUrl = ConfigurationSettings.AppSettings["url1"];
