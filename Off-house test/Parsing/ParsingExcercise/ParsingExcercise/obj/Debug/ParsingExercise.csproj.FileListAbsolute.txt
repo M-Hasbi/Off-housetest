@@ -1,0 +1,17 @@
+C:\Users\Kamil.Ciemnoczolowsk\Desktop\Parsing\ParsingExcercise\ParsingExcercise\bin\Debug\ParsingExercise.exe.config
+C:\Users\Kamil.Ciemnoczolowsk\Desktop\Parsing\ParsingExcercise\ParsingExcercise\bin\Debug\ParsingExercise.exe
+C:\Users\Kamil.Ciemnoczolowsk\Desktop\Parsing\ParsingExcercise\ParsingExcercise\bin\Debug\ParsingExercise.pdb
+C:\Users\Kamil.Ciemnoczolowsk\Desktop\Parsing\ParsingExcercise\ParsingExcercise\obj\Debug\ParsingExercise.csprojAssemblyReference.cache
+C:\Users\Kamil.Ciemnoczolowsk\Desktop\Parsing\ParsingExcercise\ParsingExcercise\obj\Debug\ParsingExercise.exe
+C:\Users\Kamil.Ciemnoczolowsk\Desktop\Parsing\ParsingExcercise\ParsingExcercise\obj\Debug\ParsingExercise.pdb
+C:\Users\CEM\source\Off-house test - Copy\Off-house test\Parsing\ParsingExcercise\ParsingExcercise\bin\Debug\ParsingExercise.exe.config
+C:\Users\CEM\source\Off-house test - Copy\Off-house test\Parsing\ParsingExcercise\ParsingExcercise\bin\Debug\ParsingExercise.exe
+C:\Users\CEM\source\Off-house test - Copy\Off-house test\Parsing\ParsingExcercise\ParsingExcercise\bin\Debug\ParsingExercise.pdb
+C:\Users\CEM\source\Off-house test - Copy\Off-house test\Parsing\ParsingExcercise\ParsingExcercise\obj\Debug\ParsingExercise.csproj.AssemblyReference.cache
+C:\Users\CEM\source\Off-house test - Copy\Off-house test\Parsing\ParsingExcercise\ParsingExcercise\obj\Debug\ParsingExercise.csproj.SuggestedBindingRedirects.cache
+C:\Users\CEM\source\Off-house test - Copy\Off-house test\Parsing\ParsingExcercise\ParsingExcercise\obj\Debug\ParsingExercise.csproj.CoreCompileInputs.cache
+C:\Users\CEM\source\Off-house test - Copy\Off-house test\Parsing\ParsingExcercise\ParsingExcercise\obj\Debug\ParsingExercise.exe
+C:\Users\CEM\source\Off-house test - Copy\Off-house test\Parsing\ParsingExcercise\ParsingExcercise\obj\Debug\ParsingExercise.pdb
+C:\Users\CEM\source\Off-house test - Copy\Off-house test\Parsing\ParsingExcercise\ParsingExcercise\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\CEM\source\Off-house test - Copy\Off-house test\Parsing\ParsingExcercise\ParsingExcercise\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\CEM\source\Off-house test - Copy\Off-house test\Parsing\ParsingExcercise\ParsingExcercise\obj\Debug\ParsingExercise.csproj.CopyComplete

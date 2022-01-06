@@ -1,0 +1,7 @@
+C:\Users\Kamil.Ciemnoczolowsk\Desktop\Downloading\DownloadingExcercise\DownloadingExcercise\bin\Debug\DownloadingExcercise.exe.config
+C:\Users\Kamil.Ciemnoczolowsk\Desktop\Downloading\DownloadingExcercise\DownloadingExcercise\bin\Debug\DownloadingExcercise.exe
+C:\Users\Kamil.Ciemnoczolowsk\Desktop\Downloading\DownloadingExcercise\DownloadingExcercise\bin\Debug\DownloadingExcercise.pdb
+C:\Users\Kamil.Ciemnoczolowsk\Desktop\Downloading\DownloadingExcercise\DownloadingExcercise\obj\Debug\DownloadingExcercise.csprojAssemblyReference.cache
+C:\Users\Kamil.Ciemnoczolowsk\Desktop\Downloading\DownloadingExcercise\DownloadingExcercise\obj\Debug\DownloadingExcercise.csproj.CoreCompileInputs.cache
+C:\Users\Kamil.Ciemnoczolowsk\Desktop\Downloading\DownloadingExcercise\DownloadingExcercise\obj\Debug\DownloadingExcercise.exe
+C:\Users\Kamil.Ciemnoczolowsk\Desktop\Downloading\DownloadingExcercise\DownloadingExcercise\obj\Debug\DownloadingExcercise.pdb
