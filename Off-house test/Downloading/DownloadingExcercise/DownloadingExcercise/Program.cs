@@ -1,18 +1,11 @@
 using System;
-using System.Configuration;
-using System.IO;
-using System.Net;
 
 namespace DownloadingExercise
 {
     class Program
     {
-        static readonly WebClient Client = new WebClient();
-
         public static void Main(string[] args)
         {
-
-
             Console.WriteLine("This is the downloading excercise program.");
 
 
@@ -32,7 +25,7 @@ namespace DownloadingExercise
             */
 
             Console.WriteLine("Example number 1 started.");
-            // DownloadExample1();
+            DownloadExample1();
             Console.WriteLine("Example number 1 finished!");
 
             /* Example 2:
@@ -49,45 +42,22 @@ namespace DownloadingExercise
             Console.WriteLine("Example number 2 started.");
             DownloadExample2();
             Console.WriteLine("Example number 2 finished!");
-
-
-
         }
-
-
-        private static void DownloadExample1()
-        {
-            // your example 1 implementation should go here
-
-            Methods methods = new Methods();
-            // Constants consts = new Constants();
-
-            string fileType = Constants.fileTypeData;
-
-            var myUrl = ConfigurationSettings.AppSettings["urlForDownloadingExercise1"];
-
-            string subPath = Constants.subPath;
-            methods.CreateIfMissing(subPath);// WRITE TEST METHOD
-
-            Client.DownloadFile(myUrl, subPath + fileType);// WRITE TEST METHOD
-
-        }
-
-
-        private static void DownloadExample2()
+        public static void DownloadExample1()
         {
             Methods methods = new Methods();
 
-
-
+            methods.CreateIfMissing(Constants.subPath);
+            methods.DownloadFileExample1();
+        }
+        public static void DownloadExample2()
+        {
+            Methods methods = new Methods();
 
             methods.CreateIfMissing(Constants.subPath);
             methods.WebDriverNavigation();
             methods.BringAddUserProfilePreference();
             methods.DownloadTheFile();
-
-
-
         }
     }
 }

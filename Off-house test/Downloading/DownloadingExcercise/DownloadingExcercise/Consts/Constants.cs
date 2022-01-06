@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-
-namespace DownloadingExercise
+﻿namespace DownloadingExercise
 {
     public class Constants
     {
