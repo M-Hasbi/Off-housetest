@@ -1,18 +1,8 @@
 using System;
-using System.Net;
-
-
-
-
 namespace DownloadingExercise
 {
     class Program
     {
-        static readonly WebClient Client = new WebClient();
-        
-
-
-
         static void Main(string[] args)
         {
 
@@ -58,7 +48,7 @@ namespace DownloadingExercise
         private static void DownloadExample1()
         {
             // your example 1 implementation should go here
-           
+
 
         }
 
