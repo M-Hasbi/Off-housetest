@@ -10,23 +10,20 @@ namespace DownloadingExercise
 {
     public class Methods
     {
-      
+
         private readonly ChromeDriver driver;
 
         public Methods()
         {
-           
+
             driver = new ChromeDriver();
         }
         public void BringAddUserProfilePreference()
         {
 
-            var preferanceName = "download.default_directory";
-            var preferanceValue = @"C:\Users\CEM\Downloads"; //on my computer this is the default download path, you need to align this with your computer's default download path.
-
             ChromeOptions chromeOptions = new ChromeOptions();
 
-            chromeOptions.AddUserProfilePreference(preferanceName, preferanceValue);
+            chromeOptions.AddUserProfilePreference(Constants.preferanceName, Constants.preferanceValue);
         }
 
         public void CreateIfMissing(string subPath)
@@ -37,12 +34,12 @@ namespace DownloadingExercise
                 Directory.CreateDirectory(subPath);
         }
 
-        
+
         public void WebDriverNavigation()
         {
             var urlForDownloadingExercise2 = ConfigurationSettings.AppSettings["urlForDownloadingExercise2"];
 
-            
+
 
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(urlForDownloadingExercise2);
@@ -55,7 +52,7 @@ namespace DownloadingExercise
         {
 
 
-            var expectedFilePath =  Constants.expectedFilePath;
+            var expectedFilePath = Constants.expectedFilePath;
             bool fileExists = false;
 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));

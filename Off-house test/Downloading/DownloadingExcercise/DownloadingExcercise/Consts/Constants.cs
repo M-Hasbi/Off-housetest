@@ -16,6 +16,8 @@ namespace DownloadingExercise
 
         public const string expectedFilePath = @"C:\Users\CEM\Downloads\gus_biuletyn_2021_11_2.xlsx"; //on my computer this is the default download path, you need to align this with your computer's default download path.
 
-        //public string urlForDownloadingExercise2 = ConfigurationSettings.AppSettings["urlForDownloadingExercise2"];
+        public const string preferanceName = "download.default_directory";
+
+        public const string preferanceValue = @"C:\Users\CEM\Downloads"; //on my computer this is the default download path, you need to align this with your computer's default download path.
     }
 }
