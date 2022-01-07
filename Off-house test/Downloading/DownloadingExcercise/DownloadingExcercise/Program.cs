@@ -1,11 +1,11 @@
 using System;
+
 namespace DownloadingExercise
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-
             Console.WriteLine("This is the downloading excercise program.");
 
 
@@ -42,17 +42,22 @@ namespace DownloadingExercise
             Console.WriteLine("Example number 2 started.");
             DownloadExample2();
             Console.WriteLine("Example number 2 finished!");
-
         }
-
-        private static void DownloadExample1()
+        public static void DownloadExample1()
         {
-            // your example 1 implementation should go here
+            Methods methods = new Methods();
+
+            methods.CreateIfMissing(Constants.subPath);
+            methods.DownloadFileExample1();
         }
-
-        private static void DownloadExample2()
+        public static void DownloadExample2()
         {
-            // your example 2 implementation should go here
+            Methods methods = new Methods();
+
+            methods.CreateIfMissing(Constants.subPath);
+            methods.WebDriverNavigation();
+            methods.BringAddUserProfilePreference();
+            methods.DownloadTheFile();
         }
     }
 }
