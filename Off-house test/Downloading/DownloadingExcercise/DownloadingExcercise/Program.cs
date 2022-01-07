@@ -47,17 +47,17 @@ namespace DownloadingExercise
         {
             Methods methods = new Methods();
 
-            methods.CreateIfMissing(Constants.subPath);
+            methods.CreateIfMissing();
             methods.DownloadFileExample1();
         }
         public static void DownloadExample2()
         {
             Methods methods = new Methods();
 
-            methods.CreateIfMissing(Constants.subPath);
+            methods.CreateIfMissing();
             methods.WebDriverNavigation();
             methods.BringAddUserProfilePreference();
-            methods.DownloadTheFile();
+
         }
     }
 }
