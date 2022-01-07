@@ -4,6 +4,7 @@ namespace DownloadingExercise
 {
     class Program
     {
+
         public static void Main(string[] args)
         {
             Console.WriteLine("This is the downloading excercise program.");
@@ -45,18 +46,19 @@ namespace DownloadingExercise
         }
         public static void DownloadExample1()
         {
-            Methods methods = new Methods();
+            OtherMethods methods = new OtherMethods(); 
+
 
             methods.CreateIfMissing();
             methods.DownloadFileExample1();
         }
         public static void DownloadExample2()
         {
-            Methods methods = new Methods();
+            OtherMethods method = new OtherMethods();
 
-            methods.CreateIfMissing();
-            methods.WebDriverNavigation();
-            methods.BringAddUserProfilePreference();
+            method.CreateIfMissing();
+            method.WebDriverNavigation();
+            method.BringAddUserProfilePreference();
 
         }
     }

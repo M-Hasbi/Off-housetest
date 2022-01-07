@@ -81,7 +81,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Consts\Constants.cs" />
-    <Compile Include="Methods\Methods.cs" />
+    <Compile Include="Methods\OtherMethods.cs" />
+    <Compile Include="Methods\MethodsForFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
