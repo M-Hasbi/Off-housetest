@@ -52,9 +52,9 @@ namespace ParsingExercise
         private static void ParsingExercise1()
         {
             // your example 1 implementation should go here
-            Methods.Methods Methods = new Methods.Methods();
+            Methods.Methods methods = new Methods.Methods();
 
-            Methods.GetCountsAndRows();
+            methods.GetCountsAndRows();
         }
 
         private static void ParsingExercise2()
