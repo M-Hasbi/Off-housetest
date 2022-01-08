@@ -8,8 +8,8 @@ using System.IO;
 namespace DownloadingExercise
 {
 
-    public class OtherMethods : MethodsForFile
-    {
+    public class NavigationProcesses : FileProcesses   // change the OtherMethods name
+    {//controller 
         public void BringAddUserProfilePreference()
         {
 
@@ -17,7 +17,6 @@ namespace DownloadingExercise
 
             chromeOptions.AddUserProfilePreference(Constants.preferanceName, Constants.preferanceValue);
         }
-
         public void WebDriverNavigation()
         {
             ChromeDriver driver = new ChromeDriver();
@@ -28,19 +27,5 @@ namespace DownloadingExercise
             driver.FindElement(By.XPath(Constants.statGovPlXPathDownload)).Click();
             DownloadTheFile(driver);
         }
-        public void DownloadTheFile(ChromeDriver driver)
-        {
-            bool fileExists = false;
-
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
-            wait.Until<bool>(x => fileExists = File.Exists(Constants.expectedFilePath)); //file system class altinda file.exist // create  butun bu logic orda olsun 
-            CheckIfFolderExists();
-
-            driver.Close();
-        }
-
-
-
-
     }
 }

@@ -4,7 +4,6 @@ namespace DownloadingExercise
 {
     class Program
     {
-
         public static void Main(string[] args)
         {
             Console.WriteLine("This is the downloading excercise program.");
@@ -44,15 +43,16 @@ namespace DownloadingExercise
             DownloadExample2();
             Console.WriteLine("Example number 2 finished!");
         }
-        public static void DownloadExample1()
+        
+        private static void DownloadExample1()
         {
             OtherMethods methods = new OtherMethods(); 
-
-
+            //use interface 
             methods.CreateIfMissing();
             methods.DownloadFileExample1();
-        }
-        public static void DownloadExample2()
+        } // comments is important
+
+        private static void DownloadExample2()
         {
             OtherMethods method = new OtherMethods();
 
