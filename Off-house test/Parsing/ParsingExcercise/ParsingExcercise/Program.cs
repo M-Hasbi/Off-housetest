@@ -1,5 +1,6 @@
 using System;
 
+
 namespace ParsingExercise
 {
     class Program
@@ -52,9 +53,7 @@ namespace ParsingExercise
         private static void ParsingExercise1()
         {
             // your example 1 implementation should go here
-            Methods.Methods methods = new Methods.Methods();
-
-            methods.GetCountsAndRows();
+            Methods.Methods.GetCountsAndRows(Constants.Consts.PathOfData1, 1);
         }
 
         private static void ParsingExercise2()
