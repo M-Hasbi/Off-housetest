@@ -5,22 +5,6 @@ namespace DownloadingExercise
 {
     class Program
     {
-        // private readonly Methods.FileProcesses method;
-        //private readonly Constants constants;
-
-        // public Program()
-        // {
-        //     method = new Methods.FileProcesses();
-        //     constants = new Constants();
-        // }
-
-        /*
-         * 1-) Eger Main metodundaki statigi kaldirirsam bana sadece bir kere constants ve fileprocesses nesnesi almama olanak sagliyor
-         * ancak bu kez de baslangic noktasi olmadigi icin uygulama crush olup kapaniyor. Ne yapilabilir?
-         * 2-)CreateIfMissing metodu icin interface kullanilabilir mi? eger oyleyse nasil?
-         * 3-)Su an ki haliyle, ilk method calistiginda chrome driver aciliyor, bu NavigationProcesses klasindan inherit edildigi icin oluyor
-         * cunku o sinifta chrome driver tanimli ve cagrildiginda driver aciyor. Bu nasil onlenir?
-         */
         public static void Main(string[] args)
         {
             Console.WriteLine("This is the downloading excercise program.");
@@ -61,28 +45,25 @@ namespace DownloadingExercise
             Console.WriteLine("Example number 2 finished!");
         }
         public static void DownloadExample1()
-        { //your code goes here
-            Methods.FileProcesses method = new Methods.FileProcesses();
-            Constants constants = new Constants();
+        {
+            //your code goes here
 
-            method.CreateIfMissing(Constants.subPath);
-            method.DownloadFileExample1(constants.downloadLinkForExercise1, Constants.subPath + Constants.fileTypeData);
+            Methods.FileProcesses.CreateIfMissing(Constants.subPath);
+            Methods.FileProcesses.DownloadTheFile(Constants.downloadLinkForExercise1, Constants.subPath + Constants.fileTypeData);
         }
 
-        private static void DownloadExample2()
-        { //your code goes here
+        public static void DownloadExample2()
+        {
+            //your code goes here
 
-            Methods.FileProcesses method = new Methods.FileProcesses();
-            Constants constants = new Constants();
-
-            method.CreateIfMissing(Constants.subPath);
-            method.BringAddUserProfilePreference(Constants.preferanceName, Constants.preferanceValue);
-            method.WebDriverNavigation(constants.downloadLinkForExercise2);
-            method.FindElement(Constants.statGovPlXPath);
-            method.FindElement(Constants.statGovPlXPathDownload);
-            method.DownloadTheFile(Constants.expectedFilePath);
-            method.CheckIfFolderExists(Constants.subPath + Constants.fileTypePopulationyyyyMM);
-            method.CloseDriver();
+            Methods.FileProcesses.CreateIfMissing(Constants.subPath);
+            Methods.NavigationProcesses.BringAddUserProfilePreference(Constants.preferanceName, Constants.preferanceValue);
+            Methods.NavigationProcesses.WebDriverNavigation(Constants.downloadLinkForExercise2);
+            Methods.NavigationProcesses.FindElement(Constants.statGovPlXPath);
+            Methods.NavigationProcesses.FindElement(Constants.statGovPlXPathDownload);
+            Methods.NavigationProcesses.CheckIfFileExistsWebDriverWait(Constants.expectedFilePath);
+            Methods.FileProcesses.CheckIfFolderExists(Constants.subPath + Constants.fileTypePopulationyyyyMM);
+            Methods.NavigationProcesses.CloseDriver();
         }
     }
 }

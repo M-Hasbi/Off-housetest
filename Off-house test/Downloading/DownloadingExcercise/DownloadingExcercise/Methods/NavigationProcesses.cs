@@ -4,36 +4,35 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.IO;
 
-namespace DownloadingExercise
+namespace DownloadingExercise.Methods
 {
-
-    public class NavigationProcesses
+    public static class NavigationProcesses
     {
-        readonly ChromeDriver driver = new ChromeDriver();
-        public void BringAddUserProfilePreference(string preferanceName, string preferanceValue)
+       private static readonly ChromeDriver driver = new ChromeDriver();
+        public static void BringAddUserProfilePreference(string preferanceName, string preferanceValue)
         {
 
             ChromeOptions chromeOptions = new ChromeOptions();
 
             chromeOptions.AddUserProfilePreference(preferanceName, preferanceValue);
         }
-        public void WebDriverNavigation(string goToUrl)
+        public static void WebDriverNavigation(string goToUrl)
         {
             driver.Navigate().GoToUrl(goToUrl);
 
         }
-        public void FindElement(string xPath)
+        public static void FindElement(string xPath)
         {
             driver.FindElement(By.XPath(xPath)).Click();
         }
-        public void DownloadTheFile(string expectedFilePath)
+        public static void CheckIfFileExistsWebDriverWait(string expectedFilePath)
         {
             bool fileExists = false;
 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until<bool>(x => fileExists = File.Exists(expectedFilePath));
         }
-        public void CloseDriver()
+        public static void CloseDriver()
         {
             driver.Close();
         }

@@ -2,9 +2,9 @@
 
 namespace DownloadingExercise
 {
-    public class Constants
+    public static class Constants
     {
-        public const string subPath = @"c:\temp\";
+        public  const string subPath = @"c:\temp\";
 
         public const string fileTypeData = "data.xls";
 
@@ -20,8 +20,8 @@ namespace DownloadingExercise
 
         public const string preferanceValue = @"C:\Users\CEM\Downloads"; //on my computer this is the default download path, you need to align this with your computer's default download path.
 
-        public string downloadLinkForExercise2 = ConfigurationSettings.AppSettings["urlForDownloadingExercise2"];
+        public static string downloadLinkForExercise2 = ConfigurationSettings.AppSettings["urlForDownloadingExercise2"];
 
-        public string downloadLinkForExercise1 = ConfigurationSettings.AppSettings["urlForDownloadingExercise1"];
+        public static string downloadLinkForExercise1 = ConfigurationSettings.AppSettings["urlForDownloadingExercise1"];
     }
 }

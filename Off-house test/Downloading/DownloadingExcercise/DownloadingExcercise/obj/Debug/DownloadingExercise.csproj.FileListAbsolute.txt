@@ -73,3 +73,4 @@ C:\Users\CEM\source\Off-house test - Copy\Off-house test\Downloading\Downloading
 C:\Users\CEM\source\Off-house test - Copy\Off-house test\Downloading\DownloadingExcercise\DownloadingExcercise\obj\Debug\DownloadingExercise.csproj.CopyComplete
 C:\Users\CEM\source\Off-house test - Copy\Off-house test\Downloading\DownloadingExcercise\DownloadingExcercise\obj\Debug\DownloadingExercise.exe
 C:\Users\CEM\source\Off-house test - Copy\Off-house test\Downloading\DownloadingExcercise\DownloadingExcercise\obj\Debug\DownloadingExercise.pdb
+C:\Users\CEM\source\Off-house test - Copy\Off-house test\Downloading\DownloadingExcercise\DownloadingExcercise\obj\Debug\DownloadingExercise.csproj.AssemblyReference.cache

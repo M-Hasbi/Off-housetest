@@ -4,21 +4,22 @@ using System.Net;
 
 namespace DownloadingExercise.Methods
 {
-    public class FileProcesses : NavigationProcesses
+
+    public static class FileProcesses
     {
 
-        public void CreateIfMissing(string subPath)
+        public static void CreateIfMissing(string subPath)
         {
             bool exists = Directory.Exists(subPath);
 
             if (!exists)
                 Directory.CreateDirectory(subPath);
         }
-        public void MoveTheFile(string expectedFilePath, string actualFilePath)
+        public static void MoveTheFile(string expectedFilePath, string actualFilePath)
         {
             File.Move(expectedFilePath, actualFilePath);
         }
-        public void CheckIfFolderExists(string filePath)
+        public static void CheckIfFolderExists(string filePath)
         {
             if (!File.Exists(filePath))
             {
@@ -30,7 +31,7 @@ namespace DownloadingExercise.Methods
                 Console.WriteLine("\n\n\n");
             }
         }
-        public void DownloadFileExample1(string address, string fileName)
+        public static void DownloadTheFile(string address, string fileName)
         {
             WebClient Client = new WebClient();
 
