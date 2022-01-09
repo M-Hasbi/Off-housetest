@@ -1,4 +1,6 @@
-﻿namespace DownloadingExercise
+﻿using System.Configuration;
+
+namespace DownloadingExercise
 {
     public class Constants
     {
@@ -17,5 +19,9 @@
         public const string preferanceName = "download.default_directory";
 
         public const string preferanceValue = @"C:\Users\CEM\Downloads"; //on my computer this is the default download path, you need to align this with your computer's default download path.
+
+        public string downloadLinkForExercise2 = ConfigurationSettings.AppSettings["urlForDownloadingExercise2"];
+
+        public string downloadLinkForExercise1 = ConfigurationSettings.AppSettings["urlForDownloadingExercise1"];
     }
 }

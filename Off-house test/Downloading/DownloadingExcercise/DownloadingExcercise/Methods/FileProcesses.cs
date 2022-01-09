@@ -1,59 +1,41 @@
-﻿using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
-using System;
-using System.Configuration;
+﻿using System;
 using System.IO;
 using System.Net;
 
 namespace DownloadingExercise.Methods
 {
-    //constracter
+    public class FileProcesses : NavigationProcesses
+    {
 
-    public class FileProcesses // change the name 
-    { // add region 
-
-        public void CreateIfMissing()
+        public void CreateIfMissing(string subPath)
         {
-            bool exists = Directory.Exists(Constants.subPath);
+            bool exists = Directory.Exists(subPath);
 
             if (!exists)
-                Directory.CreateDirectory(Constants.subPath);
+                Directory.CreateDirectory(subPath);
         }
-        public void MoveTheFile()
+        public void MoveTheFile(string expectedFilePath, string actualFilePath)
         {
-            File.Move(Constants.expectedFilePath, Constants.subPath + Constants.fileTypePopulationyyyyMM);
+            File.Move(expectedFilePath, actualFilePath);
         }
-        public void CheckIfFolderExists()
+        public void CheckIfFolderExists(string filePath)
         {
-
-
-            if (!File.Exists(Constants.subPath + Constants.fileTypePopulationyyyyMM))
+            if (!File.Exists(filePath))
             {
-                MoveTheFile();
+                MoveTheFile(Constants.expectedFilePath, Constants.subPath + Constants.fileTypePopulationyyyyMM);
             }
             else
             {
-                Console.Write("\n\nYour file which you are trying to download is already exists in your {0}", Constants.subPath);
-                Console.WriteLine(" that`s why I can not move your file from the {0}", Constants.preferanceValue);
+                Console.WriteLine("\n\n\nYour file which you are trying to download is already exists in your {0}", Constants.subPath);
+                Console.WriteLine("\n\n\n");
             }
-
         }
-        public void DownloadFileExample1() // it should takes parameter.
+        public void DownloadFileExample1(string address, string fileName)
         {
             WebClient Client = new WebClient();
 
-            var myUrl = ConfigurationSettings.AppSettings["urlForDownloadingExercise1"]; //url disardan gelmeli ki, disardan url degistiginde method patlamasin
-            Client.DownloadFile(myUrl, Constants.subPath + Constants.fileTypeData);
+            Client.DownloadFile(address, fileName);
         }
-        public void DownloadTheFile(ChromeDriver driver)
-        {
-            bool fileExists = false;
 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
-            wait.Until<bool>(x => fileExists = File.Exists(Constants.expectedFilePath)); //file system class altinda file.exist // create  butun bu logic orda olsun 
-            CheckIfFolderExists();
-
-            driver.Close();
-        }
     }
 }

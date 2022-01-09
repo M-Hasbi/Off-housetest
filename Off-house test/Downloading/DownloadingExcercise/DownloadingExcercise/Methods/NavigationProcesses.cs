@@ -1,31 +1,41 @@
-﻿using DownloadingExercise.Methods;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Configuration;
 using System.IO;
+
 namespace DownloadingExercise
 {
 
-    public class NavigationProcesses : FileProcesses   // change the OtherMethods name
-    {//controller 
-        public void BringAddUserProfilePreference()
+    public class NavigationProcesses
+    {
+        readonly ChromeDriver driver = new ChromeDriver();
+        public void BringAddUserProfilePreference(string preferanceName, string preferanceValue)
         {
 
             ChromeOptions chromeOptions = new ChromeOptions();
 
-            chromeOptions.AddUserProfilePreference(Constants.preferanceName, Constants.preferanceValue);
+            chromeOptions.AddUserProfilePreference(preferanceName, preferanceValue);
         }
-        public void WebDriverNavigation()
+        public void WebDriverNavigation(string goToUrl)
         {
-            ChromeDriver driver = new ChromeDriver();
-            var urlForDownloadingExercise2 = ConfigurationSettings.AppSettings["urlForDownloadingExercise2"];
+            driver.Navigate().GoToUrl(goToUrl);
 
-            driver.Navigate().GoToUrl(urlForDownloadingExercise2);
-            driver.FindElement(By.XPath(Constants.statGovPlXPath)).Click();
-            driver.FindElement(By.XPath(Constants.statGovPlXPathDownload)).Click();
-            DownloadTheFile(driver);
+        }
+        public void FindElement(string xPath)
+        {
+            driver.FindElement(By.XPath(xPath)).Click();
+        }
+        public void DownloadTheFile(string expectedFilePath)
+        {
+            bool fileExists = false;
+
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            wait.Until<bool>(x => fileExists = File.Exists(expectedFilePath));
+        }
+        public void CloseDriver()
+        {
+            driver.Close();
         }
     }
 }

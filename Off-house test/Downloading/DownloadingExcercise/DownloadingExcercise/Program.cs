@@ -1,9 +1,26 @@
 using System;
+using System.Configuration;
 
 namespace DownloadingExercise
 {
     class Program
     {
+        // private readonly Methods.FileProcesses method;
+        //private readonly Constants constants;
+
+        // public Program()
+        // {
+        //     method = new Methods.FileProcesses();
+        //     constants = new Constants();
+        // }
+
+        /*
+         * 1-) Eger Main metodundaki statigi kaldirirsam bana sadece bir kere constants ve fileprocesses nesnesi almama olanak sagliyor
+         * ancak bu kez de baslangic noktasi olmadigi icin uygulama crush olup kapaniyor. Ne yapilabilir?
+         * 2-)CreateIfMissing metodu icin interface kullanilabilir mi? eger oyleyse nasil?
+         * 3-)Su an ki haliyle, ilk method calistiginda chrome driver aciliyor, bu NavigationProcesses klasindan inherit edildigi icin oluyor
+         * cunku o sinifta chrome driver tanimli ve cagrildiginda driver aciyor. Bu nasil onlenir?
+         */
         public static void Main(string[] args)
         {
             Console.WriteLine("This is the downloading excercise program.");
@@ -43,23 +60,29 @@ namespace DownloadingExercise
             DownloadExample2();
             Console.WriteLine("Example number 2 finished!");
         }
-        
-        private static void DownloadExample1()
-        {
-            OtherMethods methods = new OtherMethods(); 
-            //use interface 
-            methods.CreateIfMissing();
-            methods.DownloadFileExample1();
-        } // comments is important
+        public static void DownloadExample1()
+        { //your code goes here
+            Methods.FileProcesses method = new Methods.FileProcesses();
+            Constants constants = new Constants();
+
+            method.CreateIfMissing(Constants.subPath);
+            method.DownloadFileExample1(constants.downloadLinkForExercise1, Constants.subPath + Constants.fileTypeData);
+        }
 
         private static void DownloadExample2()
-        {
-            OtherMethods method = new OtherMethods();
+        { //your code goes here
 
-            method.CreateIfMissing();
-            method.WebDriverNavigation();
-            method.BringAddUserProfilePreference();
+            Methods.FileProcesses method = new Methods.FileProcesses();
+            Constants constants = new Constants();
 
+            method.CreateIfMissing(Constants.subPath);
+            method.BringAddUserProfilePreference(Constants.preferanceName, Constants.preferanceValue);
+            method.WebDriverNavigation(constants.downloadLinkForExercise2);
+            method.FindElement(Constants.statGovPlXPath);
+            method.FindElement(Constants.statGovPlXPathDownload);
+            method.DownloadTheFile(Constants.expectedFilePath);
+            method.CheckIfFolderExists(Constants.subPath + Constants.fileTypePopulationyyyyMM);
+            method.CloseDriver();
         }
     }
 }
