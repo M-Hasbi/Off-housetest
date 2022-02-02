@@ -4,10 +4,8 @@ using System.Net;
 
 namespace DownloadingExercise.Methods
 {
-
     public static class FileProcesses
     {
-
         public static void CreateIfMissing(string subPath)
         {
             bool exists = Directory.Exists(subPath);
@@ -37,6 +35,5 @@ namespace DownloadingExercise.Methods
 
             Client.DownloadFile(address, fileName);
         }
-
     }
 }

@@ -29,7 +29,7 @@ namespace DownloadingExercise.Methods
         {
             bool fileExists = false;
 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
             wait.Until<bool>(x => fileExists = File.Exists(expectedFilePath));
         }
         public static void CloseDriver()

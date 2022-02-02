@@ -26,7 +26,7 @@ namespace DownloadingExercise
             */
 
             Console.WriteLine("Example number 1 started.");
-            DownloadExample1();
+          //  DownloadExample1();
             Console.WriteLine("Example number 1 finished!");
 
             /* Example 2:
